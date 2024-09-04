@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.141e561b.css",
+    "main.js": "/static/js/main.07ff717d.js",
+    "static/media/back.png": "/static/media/back.edb642ce1077eb193ea5.png",
+    "static/media/logo.png": "/static/media/logo.2b36bb49e6e9c0099dea.png",
+    "static/media/постер.png": "/static/media/постер.4d4dadcf6cc6f68473fe.png",
+    "index.html": "/index.html",
+    "main.141e561b.css.map": "/static/css/main.141e561b.css.map",
+    "main.07ff717d.js.map": "/static/js/main.07ff717d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.141e561b.css",
+    "static/js/main.07ff717d.js"
+  ]
+}
