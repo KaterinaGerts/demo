@@ -27,14 +27,15 @@ const Player = () => {
             `https://api.persicom.ru/projects/${PROJECT_ID}/details`
          
           );
+          console.log("🚀 ~ fetchDetails ~ response:", response)
   
           // const response = await axios.get(
           //   `https://api.persicom.ru/projects/${params.encrypted_id}/details`
           // );
   
          
-          document.title = response.data.project_name || 'Default Project Name';
-          document.description = response.data.description || '12345'
+          document.title = response.data.project.name || 'Default Project Name';
+          document.description = response.data.project.description || '12345'
         } catch (error) {
           console.error('Error fetching project details:', error);
           
