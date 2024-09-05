@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useLayoutEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import Deflogo from './logo.png';
@@ -18,6 +18,31 @@ const Player = () => {
   const [posterUrl, setPosterUrl] = useState(null);
   const PROJECT_ID =
     'gAAAAABmz4MJp2NfzIEwitZOEJ8aNvBkrZZx2LNQocW_-safI55oCkyk9vMKUmeErpvU4qbrDJNARCOIJ_1urN2wEnwoP98gzQ==';
+
+    useLayoutEffect(() => {
+      const fetchDetails = async () => {
+        try {
+         
+          const response = await axios.get(
+            `https://api.persicom.ru/projects/${PROJECT_ID}/details`
+         
+          );
+  
+          // const response = await axios.get(
+          //   `https://api.persicom.ru/projects/${params.encrypted_id}/details`
+          // );
+  
+         
+          document.title = response.data.project_name || 'Default Project Name';
+          document.description = response.data.description || '12345'
+        } catch (error) {
+          console.error('Error fetching project details:', error);
+          
+        }
+      };
+  
+      fetchDetails();
+    }, []);
 
   useEffect(() => {
     const fetchProjectDetails = async () => {
