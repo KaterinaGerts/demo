@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Player from './components/Player';
+import { MetaData } from './utils/MetaData';
 
 function App() {
     const videoUrl = ""; // Замените на URL вашего видео
@@ -11,11 +12,14 @@ function App() {
     ];
 
     return (
+        <>
+        <MetaData title="Персикомм" description="Массовая генерация рекламных видеороликов" />
       <div className="App">
           <Routes>
               <Route path="/" element={<Player videoUrl={videoUrl} buttons={buttons} />} />
           </Routes>
       </div>
+        </>
   );
 }
 
